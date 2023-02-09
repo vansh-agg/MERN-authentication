@@ -10,12 +10,12 @@ import './App.css';
 
 
 import Home from './components/home/home';
+import Navbar from './components/navbar/Navbar';
 function App() {
 
   return (
     <>
-
-      <Header />
+      <Navbar />
       <Routes>
         <Route exact path="/" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
