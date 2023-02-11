@@ -9,6 +9,7 @@ const Dashboard = () => {
     const [data, setdata] = useState(false)
     const history = useNavigate();
     const { logindata, setlogindata } = useContext(LoginContext)
+    console.log(logindata.ValidUserOne)
     const dashboardvalid = async () => {
         let token = localStorage.getItem("usersdatatoken")
         const res = await fetch("/validuser", {
@@ -43,7 +44,11 @@ const Dashboard = () => {
         <>
             {data ?
                 (
-                    <div>Dashboard</div>
+                    <div className=''>
+                        {logindata.ValidUserOne ? (<div className='user_header'>Welcome, {logindata.ValidUserOne.fname.toUpperCase()}</div>) : ''}
+
+                    </div>
+
                 ) : (<Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
                     Loading...
                     <CircularProgress />

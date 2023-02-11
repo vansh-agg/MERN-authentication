@@ -13,6 +13,7 @@ const Navbar = () => {
   const [clicked, setclicked] = useState(false)
   const history = useNavigate()
   const { logindata, setlogindata } = useContext(LoginContext)
+  console.log(logindata.ValidUserOne)
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {

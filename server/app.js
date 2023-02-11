@@ -3,12 +3,15 @@ const express = require("express");
 const app = express();
 const router = require("./routes/router");
 const cors = require("cors");
+const http = require('http')
+
 const cookiParser = require("cookie-parser")
 const mongoose = require("mongoose")
 const port = 3001
 require('dotenv').config()
 
 const dburl = process.env.DB_URL
+const server = http.createServer(app)
 
 mongoose.connect(dburl, {
     useUnifiedTopology: true,
